@@ -16,11 +16,18 @@ jobs:
       - name: Unzip source
         run: unzip GensparkHybridPremium-watchface-source-v2.zip
 
+      - name: Bump version code
+        run: |
+          FILE=galaxywatch7_premium/watchface/build.gradle.kts
+          sed -i 's/versionCode = [0-9]*/versionCode = 10/' $FILE
+          sed -i 's/versionName = "[^"]*"/versionName = "2.0"/' $FILE
+          cat $FILE
+
       - name: Build APK
         run: |
           cd galaxywatch7_premium
           chmod +x gradlew
-          ./gradlew assembleDebug --stacktrace -PversionCode=3
+          ./gradlew assembleDebug
 
       - uses: actions/upload-artifact@v4
         with:
