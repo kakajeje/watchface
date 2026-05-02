@@ -20,7 +20,7 @@ jobs:
         run: |
           cd galaxywatch7_premium
           chmod +x gradlew
-          ./gradlew assembleDebug --stacktrace
+          ./gradlew assembleDebug --stacktrace -PversionCode=3
 
       - uses: actions/upload-artifact@v4
         with:
