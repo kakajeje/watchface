@@ -1,4 +1,7 @@
 {
+  "enabledPlugins": {
+    "andrej-karpathy-skills@karpathy-skills": true
+  },
   "extraKnownMarketplaces": {
     "karpathy-skills": {
       "source": {
@@ -6,8 +9,5 @@
         "repo": "forrestchang/andrej-karpathy-skills"
       }
     }
-  },
-  "enabledPlugins": {
-    "andrej-karpathy-skills@karpathy-skills": true
   }
 }
