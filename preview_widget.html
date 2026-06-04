@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>주간 캘린더 위젯 미리보기</title>
+<style>
+  body {
+    background: #1a1a2e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+    gap: 32px;
+  }
+
+  h2 {
+    color: #8892A0;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+    letter-spacing: 1px;
+  }
+
+  /* ── 폰 홈화면 배경 ── */
+  .phone-bg {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    border-radius: 20px;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 360px;
+  }
+
+  /* ── 위젯 본체 ── */
+  .widget {
+    background: rgba(13, 17, 23, 0.93);
+    border-radius: 16px;
+    padding: 10px 10px 8px 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* ── 헤더 ── */
+  .widget-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  .widget-title {
+    color: #E7EAEE;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .week-range {
+    color: #8892A0;
+    font-size: 10px;
+  }
+
+  .divider {
+    height: 1px;
+    background: #252D3A;
+    margin-bottom: 5px;
+  }
+
+  /* ── 7컬럼 컨테이너 ── */
+  .week-container {
+    display: flex;
+    gap: 0;
+  }
+
+  /* ── 컬럼 ── */
+  .day-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .day-col:not(:last-child) .day-header,
+  .day-col:not(:last-child) .events-container {
+    margin-right: 2px;
+  }
+
+  /* ── 요일 헤더 ── */
+  .day-header {
+    background: #1A2332;
+    border-radius: 5px;
+    padding: 5px 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3px;
+  }
+  .day-header.today {
+    background: #1A3A5C;
+  }
+
+  .day-name {
+    font-size: 11px;
+    font-weight: 700;
+    color: #B0BEC5;
+    line-height: 1.2;
+  }
+  .day-name.today   { color: #64B5F6; }
+  .day-name.weekend { color: #EF9A9A; }
+
+  .day-num {
+    font-size: 10px;
+    color: #607080;
+    line-height: 1.2;
+  }
+
+  .today-badge {
+    background: #64B5F6;
+    color: #0D1117;
+    font-size: 7px;
+    font-weight: 700;
+    border-radius: 3px;
+    padding: 1px 4px;
+    margin-top: 2px;
+    display: inline-block;
+  }
+
+  /* ── 이벤트 ── */
+  .events-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding-top: 2px;
+  }
+
+  .event-item {
+    padding: 2px 2px 1px 3px;
+  }
+  .event-title-row {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+  }
+  .event-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .event-title {
+    font-size: 9px;
+    color: #C8D0DC;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+    line-height: 1.3;
+  }
+  .event-time {
+    font-size: 8px;
+    color: #4A5568;
+    padding-left: 8px;
+    line-height: 1.2;
+  }
+
+  .no-events {
+    font-size: 8px;
+    color: #2E3A4A;
+    text-align: center;
+    padding-top: 4px;
+  }
+
+  /* ── 사이즈 레이블 ── */
+  .size-label {
+    color: #4A5568;
+    font-size: 11px;
+    text-align: center;
+  }
+
+  /* ── 두 번째 (wide) 위젯 ── */
+  .phone-bg.wide {
+    width: 480px;
+  }
+
+  /* ── 섹션 타이틀 ── */
+  .section-title {
+    color: #64B5F6;
+    font-size: 12px;
+    background: rgba(100,181,246,0.08);
+    border: 1px solid rgba(100,181,246,0.2);
+    border-radius: 6px;
+    padding: 4px 12px;
+  }
+</style>
+</head>
+<body>
+
+<h2>주간 캘린더 위젯 — 미리보기</h2>
+
+<!-- ────────────── 4×4 기본 크기 ────────────── -->
+<span class="section-title">4×4 셀 (기본)</span>
+<div class="phone-bg">
+  <div class="size-label">약 250dp × 250dp</div>
+  <div class="widget">
+    <div class="widget-header">
+      <span class="widget-title">이번 주 일정</span>
+      <span class="week-range">6/4 ~ 6/10</span>
+    </div>
+    <div class="divider"></div>
+    <div class="week-container">
+
+      <!-- 목 4 TODAY -->
+      <div class="day-col">
+        <div class="day-header today">
+          <span class="day-name today">목</span>
+          <span class="day-num">4</span>
+          <span class="today-badge">오늘</span>
+        </div>
+        <div class="events-container">
+          <div class="event-item">
+            <div class="event-title-row">
+              <div class="event-dot" style="background:#4FC3F7"></div>
+              <span class="event-title">팀 미팅</span>
+            </div>
+            <div class="event-time">09:00</div>
+          </div>
+          <div class="event-item">
+            <div class="event-title-row">
+              <div class="event-dot" style="background:#81C784"></div>
+              <span class="event-title">클라이언트</span>
+            </div>
+            <div class="event-time">14:00</div>
+          </div>
+          <div class="event-item">
+            <div class="event-title-row">
+              <div class="event-dot" style="background:#FFB74D"></div>
+              <span class="event-title">주간보고</span>
+            </div>
+            <div class="event-time">종일</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 금 5 -->
+      <div class="day-col">
+        <div class="day-header">
+          <span class="day-name">금</span>
+          <span class="day-num">5</span>
+        </div>
+        <div class="events-container">
+          <div class="event-item">
+            <div class="event-title-row">
+              <div class="event-dot" style="background:#4FC3F7"></div>
+              <span class="event-title">코드리뷰</span>
+            </div>
+            <div class="event-time">10:00</div>
+          </div>
+          <div class="event-item">
+            <div class="event-title-row">
+              <div class="event-dot" style="background:#F06292"></div>
+              <span class="event-title">디자인MTG</span>
+            </div>
+            <div class="event-time">15:30</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 토 6 weekend -->
+      <div class="day-col">
+        <div class="day-header">
+          <span class="day-name weekend">토</span>
+          <span class="day-num">6</span>
+        </div>
+        <div class="events-container">
+          <div class="no-events">—</div>
+        </div>
+      </div>
+
+      <!-- 일 7 weekend -->
+      <div class="day-col">
+        <div class="day-header">
+          <span class="day-name weekend">일</span>
+          <span class="day-num">7</span>
+        </div>
+        <div class="events-container">
+          <div class="event-item">
+            <div class="event-title-row">
+              <div class="event-dot" style="background:#CE93D8"></div>
+              <span class="event-title">생일파티</span>
+            </div>
+            <div class="event-time">종일</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 월 8 -->
+      <div class="day-col">
+        <div class="day-header">
+          <span class="day-name">월</span>
+          <span class="day-num">8</span>
+        </div>
+        <div class="events-container">
+          <div class="event-item">
+            <div class="event-title-row">
+              <div class="event-dot" style="background:#4FC3F7"></div>
+              <span class="event-title">스탠드업</span>
+            </div>
+            <div class="event-time">09:00</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 화 9 -->
+      <div class="day-col">
+        <div class="day-header">
+          <span class="day-name">화</span>
+          <span class="day-num">9</span>
+        </div>
+        <div class="events-container">
+          <div class="event-item">
+            <div class="event-title-row">
+              <div class="event-dot" style="background:#81C784"></div>
+              <span class="event-title">스프린트</span>
+            </div>
+            <div class="event-time">10:00</div>
+          </div>
+          <div class="event-item">
+            <div class="event-title-row">
+              <div class="event-dot" style="background:#FFB74D"></div>
+              <span class="event-title">출장</span>
+            </div>
+            <div class="event-time">14:00</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 수 10 -->
+      <div class="day-col">
+        <div class="day-header">
+          <span class="day-name">수</span>
+          <span class="day-num">10</span>
+        </div>
+        <div class="events-container">
+          <div class="event-item">
+            <div class="event-title-row">
+              <div class="event-dot" style="background:#4FC3F7"></div>
+              <span class="event-title">팀미팅</span>
+            </div>
+            <div class="event-time">09:00</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- week-container -->
+  </div><!-- widget -->
+</div><!-- phone-bg -->
+
+
+<!-- ────────────── 6×4 넓은 크기 ────────────── -->
+<span class="section-title">6×4 셀 (확장)</span>
+<div class="phone-bg wide">
+  <div class="size-label">약 360dp × 250dp — 이벤트 제목이 더 잘 보임</div>
+  <div class="widget">
+    <div class="widget-header">
+      <span class="widget-title">이번 주 일정</span>
+      <span class="week-range">6/4 ~ 6/10</span>
+    </div>
+    <div class="divider"></div>
+    <div class="week-container">
+
+      <!-- 목 4 TODAY -->
+      <div class="day-col">
+        <div class="day-header today">
+          <span class="day-name today">목</span>
+          <span class="day-num">4</span>
+          <span class="today-badge">오늘</span>
+        </div>
+        <div class="events-container">
+          <div class="event-item">
+            <div class="event-title-row">
+              <div class="event-dot" style="background:#4FC3F7"></div>
+              <span class="event-title">팀 미팅</span>
+            </div>
+            <div class="event-time">09:00</div>
+          </div>
+          <div class="event-item">
+            <div class="event-title-row">
+              <div class="event-dot" style="background:#81C784"></div>
+              <span class="event-title">클라이언트</span>
+            </div>
+            <div class="event-time">14:00</div>
+          </div>
+          <div class="event-item">
+            <div class="event-title-row">
+              <div class="event-dot" style="background:#FFB74D"></div>
+              <span class="event-title">주간보고서</span>
+            </div>
+            <div class="event-time">종일</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 금 5 -->
+      <div class="day-col">
+        <div class="day-header">
+          <span class="day-name">금</span>
+          <span class="day-num">5</span>
+        </div>
+        <div class="events-container">
+          <div class="event-item">
+            <div class="event-title-row">
+              <div class="event-dot" style="background:#4FC3F7"></div>
+              <span class="event-title">코드리뷰</span>
+            </div>
+            <div class="event-time">10:00</div>
+          </div>
+          <div class="event-item">
+            <div class="event-title-row">
+              <div class="event-dot" style="background:#F06292"></div>
+              <span class="event-title">디자인 MTG</span>
+            </div>
+            <div class="event-time">15:30</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 토 6 -->
+      <div class="day-col">
+        <div class="day-header">
+          <span class="day-name weekend">토</span>
+          <span class="day-num">6</span>
+        </div>
+        <div class="events-container">
+          <div class="no-events">—</div>
+        </div>
+      </div>
+
+      <!-- 일 7 -->
+      <div class="day-col">
+        <div class="day-header">
+          <span class="day-name weekend">일</span>
+          <span class="day-num">7</span>
+        </div>
+        <div class="events-container">
+          <div class="event-item">
+            <div class="event-title-row">
+              <div class="event-dot" style="background:#CE93D8"></div>
+              <span class="event-title">생일 파티</span>
+            </div>
+            <div class="event-time">종일</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 월 8 -->
+      <div class="day-col">
+        <div class="day-header">
+          <span class="day-name">월</span>
+          <span class="day-num">8</span>
+        </div>
+        <div class="events-container">
+          <div class="event-item">
+            <div class="event-title-row">
+              <div class="event-dot" style="background:#4FC3F7"></div>
+              <span class="event-title">스탠드업</span>
+            </div>
+            <div class="event-time">09:00</div>
+          </div>
+          <div class="event-item">
+            <div class="event-title-row">
+              <div class="event-dot" style="background:#81C784"></div>
+              <span class="event-title">1on1 미팅</span>
+            </div>
+            <div class="event-time">11:00</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 화 9 -->
+      <div class="day-col">
+        <div class="day-header">
+          <span class="day-name">화</span>
+          <span class="day-num">9</span>
+        </div>
+        <div class="events-container">
+          <div class="event-item">
+            <div class="event-title-row">
+              <div class="event-dot" style="background:#81C784"></div>
+              <span class="event-title">스프린트</span>
+            </div>
+            <div class="event-time">10:00</div>
+          </div>
+          <div class="event-item">
+            <div class="event-title-row">
+              <div class="event-dot" style="background:#FFB74D"></div>
+              <span class="event-title">출장</span>
+            </div>
+            <div class="event-time">14:00</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 수 10 -->
+      <div class="day-col">
+        <div class="day-header">
+          <span class="day-name">수</span>
+          <span class="day-num">10</span>
+        </div>
+        <div class="events-container">
+          <div class="event-item">
+            <div class="event-title-row">
+              <div class="event-dot" style="background:#4FC3F7"></div>
+              <span class="event-title">팀 미팅</span>
+            </div>
+            <div class="event-time">09:00</div>
+          </div>
+          <div class="event-item">
+            <div class="event-title-row">
+              <div class="event-dot" style="background:#F06292"></div>
+              <span class="event-title">제품 리뷰</span>
+            </div>
+            <div class="event-time">15:00</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ── 범례 ── -->
+<div style="color:#4A5568; font-size:11px; text-align:center; line-height:1.8;">
+  <span style="color:#64B5F6">■</span> 오늘 강조 &nbsp;|&nbsp;
+  <span style="color:#EF9A9A">■</span> 주말 빨간색 &nbsp;|&nbsp;
+  각 도트 색상 = 캘린더 색상
+</div>
+
+</body>
+</html>
