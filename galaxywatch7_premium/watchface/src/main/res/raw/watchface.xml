@@ -1,0 +1,174 @@
+<?xml version="1.0"?>
+<WatchFace width="450" height="450">
+  <Metadata key="CLOCK_TYPE" value="ANALOG" />
+  <Metadata key="PREVIEW_TIME" value="10:08:32" />
+
+  <Scene backgroundColor="#000000">
+    <Group x="0" y="0" width="450" height="450" name="base">
+
+      <!-- 배경 + 베젤 -->
+      <PartDraw x="0" y="0" width="450" height="450">
+        <Ellipse x="0" y="0" width="450" height="450"><Fill color="#060708" /></Ellipse>
+        <Ellipse x="8" y="8" width="434" height="434"><Stroke thickness="8" color="#1A1C1F" /></Ellipse>
+        <Ellipse x="14" y="14" width="422" height="422"><Stroke thickness="2" color="#777D86" /></Ellipse>
+        <Ellipse x="28" y="28" width="394" height="394"><Stroke thickness="1" color="#2A2E34" /></Ellipse>
+        <Ellipse x="48" y="48" width="354" height="354"><Fill color="#0A0B0D" /><Stroke thickness="2" color="#181B1F" /></Ellipse>
+        <Ellipse x="72" y="72" width="306" height="306"><Stroke thickness="1" color="#242830" /></Ellipse>
+        <Ellipse x="92" y="92" width="266" height="266"><Stroke thickness="1" color="#1A1D22" /></Ellipse>
+      </PartDraw>
+
+      <!-- 베젤 눈금 -->
+      <PartDraw x="0" y="0" width="450" height="450">
+        <Rectangle x="223" y="16" width="3" height="13"><Fill color="#C8CDD4" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="6" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="12" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="18" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="24" /></Rectangle>
+        <Rectangle x="223" y="16" width="3" height="13"><Fill color="#C8CDD4" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="30" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="36" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="42" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="48" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="54" /></Rectangle>
+        <Rectangle x="223" y="16" width="3" height="13"><Fill color="#C8CDD4" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="60" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="66" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="72" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="78" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="84" /></Rectangle>
+        <Rectangle x="223" y="16" width="3" height="13"><Fill color="#C8CDD4" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="90" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="96" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="102" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="108" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="114" /></Rectangle>
+        <Rectangle x="223" y="16" width="3" height="13"><Fill color="#C8CDD4" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="120" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="126" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="132" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="138" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="144" /></Rectangle>
+        <Rectangle x="223" y="16" width="3" height="13"><Fill color="#C8CDD4" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="150" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="156" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="162" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="168" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="174" /></Rectangle>
+        <Rectangle x="223" y="16" width="3" height="13"><Fill color="#C8CDD4" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="180" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="186" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="192" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="198" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="204" /></Rectangle>
+        <Rectangle x="223" y="16" width="3" height="13"><Fill color="#C8CDD4" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="210" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="216" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="222" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="228" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="234" /></Rectangle>
+        <Rectangle x="223" y="16" width="3" height="13"><Fill color="#C8CDD4" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="240" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="246" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="252" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="258" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="264" /></Rectangle>
+        <Rectangle x="223" y="16" width="3" height="13"><Fill color="#C8CDD4" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="270" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="276" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="282" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="288" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="294" /></Rectangle>
+        <Rectangle x="223" y="16" width="3" height="13"><Fill color="#C8CDD4" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="300" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="306" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="312" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="318" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="324" /></Rectangle>
+        <Rectangle x="223" y="16" width="3" height="13"><Fill color="#C8CDD4" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="330" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="336" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="342" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="348" /></Rectangle>
+        <Rectangle x="223" y="16" width="1.5" height="7"><Fill color="#6E757E" /><Transform target="pivotX" value="0.5" /><Transform target="pivotY" value="0.0" /><Transform target="angle" value="354" /></Rectangle>
+      </PartDraw>
+
+      <!-- 시간 숫자 -->
+      <PartText x="202" y="18" width="46" height="24"><Text align="CENTER"><Font family="SYNC_TO_DEVICE" size="22" color="#E7EAEE"><Template><![CDATA[12]]></Template></Font></Text></PartText>
+      <PartText x="302" y="48" width="38" height="22"><Text align="CENTER"><Font family="SYNC_TO_DEVICE" size="17" color="#D9DDE2"><Template><![CDATA[01]]></Template></Font></Text></PartText>
+      <PartText x="372" y="114" width="38" height="22"><Text align="CENTER"><Font family="SYNC_TO_DEVICE" size="17" color="#D9DDE2"><Template><![CDATA[02]]></Template></Font></Text></PartText>
+      <PartText x="399" y="214" width="32" height="22"><Text align="CENTER"><Font family="SYNC_TO_DEVICE" size="17" color="#D9DDE2"><Template><![CDATA[03]]></Template></Font></Text></PartText>
+      <PartText x="372" y="314" width="38" height="22"><Text align="CENTER"><Font family="SYNC_TO_DEVICE" size="17" color="#D9DDE2"><Template><![CDATA[04]]></Template></Font></Text></PartText>
+      <PartText x="302" y="382" width="38" height="22"><Text align="CENTER"><Font family="SYNC_TO_DEVICE" size="17" color="#D9DDE2"><Template><![CDATA[05]]></Template></Font></Text></PartText>
+      <PartText x="202" y="409" width="46" height="24"><Text align="CENTER"><Font family="SYNC_TO_DEVICE" size="22" color="#E7EAEE"><Template><![CDATA[06]]></Template></Font></Text></PartText>
+      <PartText x="108" y="382" width="38" height="22"><Text align="CENTER"><Font family="SYNC_TO_DEVICE" size="17" color="#D9DDE2"><Template><![CDATA[07]]></Template></Font></Text></PartText>
+      <PartText x="40" y="314" width="38" height="22"><Text align="CENTER"><Font family="SYNC_TO_DEVICE" size="17" color="#D9DDE2"><Template><![CDATA[08]]></Template></Font></Text></PartText>
+      <PartText x="17" y="214" width="32" height="22"><Text align="CENTER"><Font family="SYNC_TO_DEVICE" size="17" color="#D9DDE2"><Template><![CDATA[09]]></Template></Font></Text></PartText>
+      <PartText x="40" y="114" width="38" height="22"><Text align="CENTER"><Font family="SYNC_TO_DEVICE" size="17" color="#D9DDE2"><Template><![CDATA[10]]></Template></Font></Text></PartText>
+      <PartText x="108" y="48" width="38" height="22"><Text align="CENTER"><Font family="SYNC_TO_DEVICE" size="17" color="#D9DDE2"><Template><![CDATA[11]]></Template></Font></Text></PartText>
+
+      <!-- 상단 패널 -->
+      <Group x="106" y="50" width="238" height="54" name="top_panel">
+        <PartDraw x="0" y="0" width="238" height="54">
+          <RoundRectangle x="0" y="0" width="238" height="54" cornerRadiusX="18" cornerRadiusY="18"><Fill color="#101316" /><Stroke thickness="2" color="#6A717B" /></RoundRectangle>
+        </PartDraw>
+        <PartText x="0" y="8" width="238" height="18">
+          <Text align="CENTER" ellipsis="TRUE"><Font family="SYNC_TO_DEVICE" size="15" color="#F0F3F7"><Template><![CDATA[%s, %s월 %s]]><Parameter expression="[DAY_OF_WEEK_S]"/><Parameter expression="[MONTH]"/><Parameter expression="[DAY_Z]"/></Template></Font></Text>
+        </PartText>
+        <PartText x="0" y="28" width="238" height="18">
+          <Text align="CENTER" ellipsis="TRUE"><Font family="SYNC_TO_DEVICE" size="15" color="#B6BEC8"><Template><![CDATA[%s  %s°C]]><Parameter expression="[WEATHER.IS_AVAILABLE] ? [WEATHER.CONDITION_NAME] : &quot;날씨 --&quot;"/><Parameter expression="[WEATHER.IS_AVAILABLE] ? [WEATHER.TEMPERATURE] : &quot;--&quot;"/></Template></Font></Text>
+        </PartText>
+      </Group>
+
+      <!-- 좌측 패널: PNG 아이콘 사용 -->
+      <Group x="38" y="156" width="158" height="118" name="left_panel">
+        <PartDraw x="0" y="0" width="158" height="118">
+          <RoundRectangle x="0" y="0" width="158" height="118" cornerRadiusX="18" cornerRadiusY="18"><Fill color="#101316" /><Stroke thickness="2" color="#686F78" /></RoundRectangle>
+        </PartDraw>
+        <!-- 하트 아이콘 + bpm -->
+        <PartImage x="14" y="14" width="26" height="26" resource="icon_heart" />
+        <PartText x="44" y="12" width="106" height="28">
+          <Text ellipsis="TRUE"><Font family="SYNC_TO_DEVICE" size="22" color="#F4F6F8"><Template><![CDATA[%s bpm]]><Parameter expression="[HEART_RATE] != null ? [HEART_RATE] : &quot;--&quot;"/></Template></Font></Text>
+        </PartText>
+        <!-- 구분선 -->
+        <PartDraw x="14" y="56" width="130" height="1"><Rectangle x="0" y="0" width="130" height="1"><Fill color="#2E3339" /></Rectangle></PartDraw>
+        <!-- 신발 아이콘 + steps -->
+        <PartImage x="12" y="68" width="30" height="20" resource="icon_steps" />
+        <PartText x="44" y="64" width="106" height="28">
+          <Text ellipsis="TRUE"><Font family="SYNC_TO_DEVICE" size="22" color="#F4F6F8"><Template><![CDATA[%s]]><Parameter expression="[STEP_COUNT]"/></Template></Font></Text>
+        </PartText>
+        <PartText x="44" y="92" width="106" height="18">
+          <Text ellipsis="TRUE"><Font family="SYNC_TO_DEVICE" size="13" color="#AAB2BD"><Template><![CDATA[Steps]]></Template></Font></Text>
+        </PartText>
+      </Group>
+
+      <!-- 우측 패널: 배터리 PNG 아이콘 + % -->
+      <Group x="276" y="160" width="138" height="112" name="right_panel">
+        <PartDraw x="0" y="0" width="138" height="112">
+          <RoundRectangle x="0" y="0" width="138" height="112" cornerRadiusX="18" cornerRadiusY="18"><Fill color="#101316" /><Stroke thickness="2" color="#686F78" /></RoundRectangle>
+        </PartDraw>
+        <PartImage x="55" y="10" width="28" height="40" resource="icon_battery" />
+        <PartText x="0" y="54" width="138" height="50">
+          <Text align="CENTER"><Font family="SYNC_TO_DEVICE" size="32" weight="BOLD" color="#F4F6F8"><Template><![CDATA[%s%%]]><Parameter expression="[BATTERY_PERCENT]"/></Template></Font></Text>
+        </PartText>
+      </Group>
+
+      <!-- 하단 패널: 초 -->
+      <Group x="138" y="332" width="174" height="54" name="bottom_panel">
+        <PartDraw x="0" y="0" width="174" height="54">
+          <RoundRectangle x="0" y="0" width="174" height="54" cornerRadiusX="18" cornerRadiusY="18"><Fill color="#101316" /><Stroke thickness="2" color="#6A717B" /></RoundRectangle>
+        </PartDraw>
+        <PartText x="30" y="11" width="58" height="28">
+          <Text align="RIGHT"><Font family="SYNC_TO_DEVICE" size="28" weight="BOLD" color="#F4F6F8"><Template><![CDATA[%s]]><Parameter expression="[SECOND_Z]"/></Template></Font></Text>
+        </PartText>
+        <PartText x="92" y="17" width="50" height="16">
+          <Text align="LEFT"><Font family="SYNC_TO_DEVICE" size="15" color="#ABB4BE"><Template><![CDATA[SEC]]></Template></Font></Text>
+        </PartText>
+      </Group>
+    </Group>
+
+    <!-- 시침/분침/초침 PNG -->
+    <AnalogClock x="0" y="0" width="450" height="450">
+      <HourHand resource="hour" x="207" y="105" width="36" height="180" pivotX="0.5" pivotY="0.92" />
+      <MinuteHand resource="minute" x="211" y="55" width="28" height="220" pivotX="0.5" pivotY="0.93" />
+      <SecondHand resource="second" x="219" y="40" width="12" height="250" pivotX="0.5" pivotY="0.85">
+        <Variant mode="AMBIENT" target="alpha" value="0" />
+        <Sweep frequency="15" />
+      </SecondHand>
+    </AnalogClock>
+
+    <!-- 중앙 피벗 -->
+    <PartDraw x="210" y="210" width="30" height="30">
+      <Ellipse x="0" y="0" width="30" height="30"><Fill color="#0D0F12" /><Stroke thickness="2" color="#7C858F" /></Ellipse>
+      <Ellipse x="10" y="10" width="10" height="10"><Fill color="#E7EBF0" /></Ellipse>
+    </PartDraw>
+  </Scene>
+</WatchFace>
