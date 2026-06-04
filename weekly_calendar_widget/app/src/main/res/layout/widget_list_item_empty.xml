@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tvEmpty"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="16dp"
+    android:paddingEnd="4dp"
+    android:paddingTop="3dp"
+    android:paddingBottom="3dp"
+    android:text="@string/no_events"
+    android:textColor="#3A4558"
+    android:textSize="10sp"
+    android:textStyle="italic" />

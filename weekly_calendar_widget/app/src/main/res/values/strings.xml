@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">주간 캘린더 위젯</string>
+    <string name="widget_description">오늘부터 7일간의 일정을 보여줍니다</string>
+    <string name="widget_title">이번 주 일정</string>
+    <string name="today_label">오늘</string>
+    <string name="no_events">일정 없음</string>
+    <string name="all_day">종일</string>
+    <string name="calendar_permission_needed">캘린더 접근 권한이 필요합니다.\n아래 버튼을 눌러 권한을 허용해 주세요.</string>
+    <string name="grant_permission">권한 허용하기</string>
+</resources>
