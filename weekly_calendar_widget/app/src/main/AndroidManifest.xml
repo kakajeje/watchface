@@ -9,7 +9,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WeeklyCalendarWidget">
 
-        <!-- Widget Provider -->
         <receiver
             android:name=".WeeklyCalendarWidget"
             android:exported="true">
@@ -23,13 +22,6 @@
                 android:resource="@xml/weekly_calendar_widget_info" />
         </receiver>
 
-        <!-- RemoteViews Service for ListView -->
-        <service
-            android:name=".WeeklyCalendarWidgetService"
-            android:exported="false"
-            android:permission="android.permission.BIND_REMOTEVIEWS" />
-
-        <!-- Permission Request Activity -->
         <activity
             android:name=".PermissionActivity"
             android:exported="true"
